@@ -1,3 +1,8 @@
 {
-    "__EXAMPLE_URL__": "https://example.com"
+    "__AUTH_URL__": "https://stgapi.bluebird.id",
+    "__MOBILE_URL__": "https://stgapi-corptimesheet.bluebird.id",
+    "__VALID_NIP__": "00239755",
+    "__INVALID_NIP__": "0013205",
+    "__VALID_PASSWORD__": "9755",
+    "__INVALID_PASSWORD__": "9090"
 }

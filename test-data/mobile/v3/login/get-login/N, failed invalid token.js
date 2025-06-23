@@ -4,18 +4,16 @@ const scriptName = path.basename(__filename).split('.')[0];
 const test_data = {
     "title": scriptName,
     "header": {
-        "Authorization": `Bearer ${__TOKEN_DA__}`,
-        "X-Request-Id": "mobile",
+        "Authorization": `Bearer tokennya_salah`,
+        "X-Request-Id": "mobile"
     },
     "param": {},
     "expected_result": {
-        "status_code": 200,
+        "status_code": 401,
         "body": {
-            "code": 200,
-            "result": {
-                "is_able_to_login": true,
-                "is_able_to_access": true
-            }
+            "error_code": "Unauthorized",
+            "code": 401,
+            "message": "error invalid token"
         }
     }
 }

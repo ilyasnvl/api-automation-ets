@@ -5,17 +5,14 @@ const test_data = {
     "title": scriptName,
     "header": {
         "Authorization": `Bearer ${__TOKEN_DA__}`,
-        "X-Request-Id": "mobile",
     },
-    "param": {},
+    "param": {  },
     "expected_result": {
-        "status_code": 200,
+        "status_code": 400,
         "body": {
-            "code": 200,
-            "result": {
-                "is_able_to_login": true,
-                "is_able_to_access": true
-            }
+            "error_code": "Unauthorized",
+            "code": 400,
+            "message": "Invalid X-Request-Id"
         }
     }
 }

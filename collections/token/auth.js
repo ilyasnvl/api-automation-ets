@@ -9,6 +9,7 @@ async function postAuth(header, body) {
     });
 
     const res = await caller.post()
+    console.log("Auth Respons:", res.status, res.body);
     return res
 }
 

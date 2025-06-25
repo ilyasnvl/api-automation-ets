@@ -4,7 +4,7 @@ const scriptName = path.basename(__filename).split('.')[0];
 const test_data = {
     "title": scriptName,
     "header": {
-        "Authorization": `Bearer ${__TOKEN_DA__}`,
+        "Authorization": `Bearer ${__TOKEN_DA_FOK__}`,
     },
     "param": {
         "period": "2025-06"

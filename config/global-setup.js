@@ -21,7 +21,7 @@ module.exports = async function (globalConfig, projectConfig) {
         user_secret: globalVariables.__VALID_PASSWORD2__
     });
 
-    globalVariables.__RANDOM_NIP__ = generateRandomNip();
+    //globalVariables.__RANDOM_NIP__ = generateRandomNip();
 
     // create token OP
     globalVariables.__TOKEN_OP__ = await createTokenCustomer({
@@ -93,7 +93,7 @@ async function createTokenDa({ user_id, user_secret }) {
 async function createTokenCustomer({ user_id, user_secret }) {
     const body = {
         user_id,
-        user_secret
+        user_secret,
     };
 
     try {
@@ -107,7 +107,7 @@ async function createTokenCustomer({ user_id, user_secret }) {
             throw new Error("token customer tidak ditemukan di response body")
         }
 
-        return response.body.id_token;
+        return response.body.result.access_token;
     } catch (error) {
         console.error("gagal mendapatkan token customer: ", error.message);
         return null

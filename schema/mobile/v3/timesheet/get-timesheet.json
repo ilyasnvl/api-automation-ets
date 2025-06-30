@@ -1,0 +1,289 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "type": "object",
+          "properties": {
+            "page": {
+              "type": "integer"
+            },
+            "show": {
+              "type": "integer"
+            },
+            "total_data": {
+              "type": "integer"
+            },
+            "total_page": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "page",
+            "show",
+            "total_data",
+            "total_page"
+          ]
+        },
+        "current_date": {
+          "type": "string"
+        },
+        "end_of_period": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "is_fok_available": {
+          "type": "boolean"
+        },
+        "data": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "date_of_service": {
+                  "type": "string"
+                },
+                "start_of_work": {
+                  "type": "string"
+                },
+                "end_of_work": {
+                  "type": "string"
+                },
+                "is_start_location_beyond_area": {
+                  "type": "boolean"
+                },
+                "ts_start_location": {
+                  "type": "string"
+                },
+                "ts_start_longitude": {
+                  "type": "number"
+                },
+                "ts_start_latitude": {
+                  "type": "number"
+                },
+                "is_end_location_beyond_area": {
+                  "type": "boolean"
+                },
+                "ts_end_location": {
+                  "type": "string"
+                },
+                "ts_end_longitude": {
+                  "type": "number"
+                },
+                "ts_end_latitude": {
+                  "type": "number"
+                },
+                "is_replacement_driver": {
+                  "type": "boolean"
+                },
+                "is_overtime": {
+                  "type": "boolean"
+                },
+                "is_overtime_before_work": {
+                  "type": "boolean"
+                },
+                "is_overtime_after_work": {
+                  "type": "boolean"
+                },
+                "is_overtime_dayoff": {
+                  "type": "boolean"
+                },
+                "overtime_hours": {
+                  "type": "integer"
+                },
+                "notes_day_off": {
+                  "type": "string"
+                },
+                "is_day_off": {
+                  "type": "boolean"
+                },
+                "is_work_on_dayoff": {
+                  "type": "boolean"
+                },
+                "is_overnight": {
+                  "type": "boolean"
+                },
+                "is_out_of_town": {
+                  "type": "boolean"
+                },
+                "out_town_start_location": {
+                  "type": "string"
+                },
+                "out_town_start_longitude": {
+                  "type": "integer"
+                },
+                "out_town_start_latitude": {
+                  "type": "integer"
+                },
+                "out_town_end_location": {
+                  "type": "string"
+                },
+                "out_town_end_longitude": {
+                  "type": "integer"
+                },
+                "out_town_end_latitude": {
+                  "type": "integer"
+                },
+                "route": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "integer"
+                },
+                "trip_time": {
+                  "type": "integer"
+                },
+                "trip_distance": {
+                  "type": "number"
+                },
+                "fok_start_of_work": {
+                  "type": "string"
+                },
+                "fok_end_of_work": {
+                  "type": "string"
+                },
+                "is_add_info_added": {
+                  "type": "boolean"
+                },
+                "add_info_type": {
+                  "type": "integer"
+                },
+                "add_info_status": {
+                  "type": "integer"
+                },
+                "add_info_notes": {
+                  "type": "string"
+                },
+                "reason_by_pic": {
+                  "type": "string"
+                },
+                "reason_by_dedicated": {
+                  "type": "string"
+                },
+                "permission_id": {
+                  "type": "integer"
+                },
+                "sio_no": {
+                  "type": "string"
+                },
+                "sio_ppk": {
+                  "type": "string"
+                },
+                "km_start": {
+                  "type": "integer"
+                },
+                "km_finish": {
+                  "type": "integer"
+                },
+                "timezone": {
+                  "type": "integer"
+                },
+                "is_shifting_hours": {
+                  "type": "boolean"
+                },
+                "shifting_start_of_work": {
+                  "type": "null"
+                },
+                "shifting_end_of_work": {
+                  "type": "null"
+                },
+                "swap_date": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "overtime_in_minutes": {
+                  "type": "integer"
+                },
+                "overtime_out_minutes": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "date_of_service",
+                "start_of_work",
+                "end_of_work",
+                "is_start_location_beyond_area",
+                "ts_start_location",
+                "ts_start_longitude",
+                "ts_start_latitude",
+                "is_end_location_beyond_area",
+                "ts_end_location",
+                "ts_end_longitude",
+                "ts_end_latitude",
+                "is_replacement_driver",
+                "is_overtime",
+                "is_overtime_before_work",
+                "is_overtime_after_work",
+                "is_overtime_dayoff",
+                "overtime_hours",
+                "notes_day_off",
+                "is_day_off",
+                "is_work_on_dayoff",
+                "is_overnight",
+                "is_out_of_town",
+                "out_town_start_location",
+                "out_town_start_longitude",
+                "out_town_start_latitude",
+                "out_town_end_location",
+                "out_town_end_longitude",
+                "out_town_end_latitude",
+                "route",
+                "status",
+                "trip_time",
+                "trip_distance",
+                "fok_start_of_work",
+                "fok_end_of_work",
+                "is_add_info_added",
+                "add_info_type",
+                "add_info_status",
+                "add_info_notes",
+                "reason_by_pic",
+                "reason_by_dedicated",
+                "permission_id",
+                "sio_no",
+                "sio_ppk",
+                "km_start",
+                "km_finish",
+                "timezone",
+                "is_shifting_hours",
+                "shifting_start_of_work",
+                "shifting_end_of_work",
+                "swap_date",
+                "label",
+                "overtime_in_minutes",
+                "overtime_out_minutes"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "meta",
+        "current_date",
+        "end_of_period",
+        "is_fok_available",
+        "data"
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "result"
+  ]
+}

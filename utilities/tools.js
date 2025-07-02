@@ -63,6 +63,8 @@ function generateDateTime(subsetHours = 0, gmtOffset = 7) {
     let currentDate = new Date();
     currentDate.setHours(currentDate.getHours() + subsetHours);
     currentDate.toLocaleString('en-US', options);
+    
+    console.log("response date: ", formatDateISO)
 
     return formatDateISO(currentDate, gmtOffset)
 }

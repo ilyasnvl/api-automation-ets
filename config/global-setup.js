@@ -1,3 +1,5 @@
+const { getTimesheet, putTimesheetIn } = require('../collections/mobile/v3/timesheet');
+const test_data = require('../test-data/mobile/v3/timesheet/put-in/P, successfully timesheet in');
 const globalVariables = require('./global-variables.json')
 const request = require('supertest');
 
@@ -19,6 +21,12 @@ module.exports = async function (globalConfig, projectConfig) {
     globalVariables.__TOKEN_DA_NO_FOK__ = await createTokenDa({
         user_id: globalVariables.__VALID_NIP2__,
         user_secret: globalVariables.__VALID_PASSWORD2__
+    });
+
+    // create token driver for timesheet in/out
+    globalVariables.__TOKEN_DA_TS__ = await createTokenDa({
+        user_id: globalVariables.__VALID_NIP3__,
+        user_secret: globalVariables.__VALID_PASSWORD3__
     });
 
     //globalVariables.__RANDOM_NIP__ = generateRandomNip();
@@ -46,9 +54,12 @@ module.exports = async function (globalConfig, projectConfig) {
         user_id: globalVariables.__VALID_UDED__,
         user_secret: globalVariables.__VALID_PASSWORD_UDED__
     });
+    
+    globalVariables.__ID_TS__  = await putTimesheetIn(test_data.header, test_data.body).result.body;
 
     console.log("token da fok: ", globalVariables.__TOKEN_DA_FOK__);
     console.log("token da no fok: ", globalVariables.__TOKEN_DA_NO_FOK__);
+    console.log("token da for timesheet: ", globalVariables.__TOKEN_DA_TS__)
     console.log("token op: ", globalVariables.__TOKEN_OP__);
     console.log("token sales: ", globalVariables.__TOKEN_SALES__);
     console.log("token pic: ", globalVariables.__TOKEN_PIC__);

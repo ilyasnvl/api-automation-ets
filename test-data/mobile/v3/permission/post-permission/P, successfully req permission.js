@@ -11,8 +11,8 @@ const test_data = {
     "body": {
         "driver_nip": __VALID_NIP__,
         "permission_type_id": 21,
-        "permission_date_start": "2025-06-30",
-        "permission_date_end": "2025-06-30",
+        "permission_date_start": "2025-07-10",
+        "permission_date_end": "2025-07-10",
         "request_note": "test",
         "driver_notes": {
             "parking_location": "test",

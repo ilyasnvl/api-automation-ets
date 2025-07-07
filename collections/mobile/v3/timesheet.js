@@ -27,6 +27,8 @@ async function putValidate(header, body) {
 }
 
 async function putTimesheetIn(header, body) {
+    console.log("req body absen in: ", body)
+    
     const caller = new restApiCaller({
         url: __BASE_URL__,
         endPoint: '/mobile/v3/timesheet/in',
@@ -35,12 +37,14 @@ async function putTimesheetIn(header, body) {
     })
 
     const res = await caller.put()
-    console.log("response absen in: ", res.statusCode, res.body.result.id)
+    console.log("response absen in: ", res.statusCode, res.body)
     return res
 }
 
-async function putTimesheetOut(header, idTs,body) {
-    console.log("id dari ts in: ", body)
+async function putTimesheetOut(header, idTs, body) {
+    console.log("id dari ts in: ", idTs)
+    console.log("req body asben out: ", body)
+
     const caller = new restApiCaller({
         url: __BASE_URL__,
         endPoint: '/mobile/v1/timesheet/out/' + idTs,
@@ -53,9 +57,25 @@ async function putTimesheetOut(header, idTs,body) {
     return res
 }
 
+async function putAdditional(header, idTs, body) {
+    console.log("Req body correction absen: ", body)
+
+    const caller = new restApiCaller({
+        url: __BASE_URL__,
+        endPoint: '/mobile/v1/timesheet/additional/' + idTs,
+        header: header,
+        body: body,
+    })
+
+    const res = await caller.put()
+    console.log("response correction absen: ", res.body)
+    return res
+}
+
 module.exports = {
     getTimesheet,
     putValidate,
     putTimesheetIn,
-    putTimesheetOut
+    putTimesheetOut,
+    putAdditional
 }

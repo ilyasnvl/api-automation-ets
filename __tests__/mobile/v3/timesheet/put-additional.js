@@ -1,10 +1,10 @@
 const timsheetCollection = require('../../../../collections/mobile/v3/timesheet')
 const globalVariables = require('../../../../config/global-variables.json')
 
+const testDataDir = __filename.split('.')[0].replace('__tests__', 'test-data')
 const timesheetHelper = require('../../../../utilities/helper/mobile/timesheet')
 const tsInTestData = require('../../../../test-data/mobile/v3/timesheet/put-in/P, successfully timesheet in')
-
-const testDataDir = __filename.split('.')[0].replace('__tests__', 'test-data')
+const tsOutTestData = require('../../../../test-data/mobile/v3/timesheet/put-out/P, successfully timesheet out')
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let testData = require('require-all')({
@@ -14,14 +14,17 @@ let testData = require('require-all')({
 let res
 let idTs
 
-beforeAll(async () => {       
+beforeAll(async () => {
     const header = {
-        "Authorization": `Bearer ${__TOKEN_DA_PUT_OUT__}`,
+        "Authorization": `Bearer ${__TOKEN_DA_PUT_ADDITIONAL__}`,
         "X-Request-Id": "mobile"
     }
     res = await timsheetCollection.putTimesheetIn(header, tsInTestData.body)
-    console.log("response timesheet IN di test suite: ", res.body)
+    console.log("response timesheet IN di test suite additional: ", res.body)
     idTs = res.body.result.id
+
+    resTsOut = await timsheetCollection.putTimesheetOut(tsOutTestData.header, idTs, tsOutTestData.body)
+    console.log("respnose absen out from test suite additional: ", resTsOut.body)
 })
 
 afterAll(async () => {
@@ -29,15 +32,17 @@ afterAll(async () => {
     return res
 })
 
-describe("Put Timesheet Out Driver", () => {
+describe("Put Correction Absen", () => {
     test.each(Object.values(testData))(
-        "Test $title ", async ({ title, header, body, expected_result }) => {
-            res = await timsheetCollection.putTimesheetOut(header, idTs, body)
+        "Test $title ", async({ title, header, body, expected_result }) => {
+            res = await timsheetCollection.putAdditional(header, idTs, body)
             expect(res.statusCode).toEqual(expected_result.status_code)
             expect(res.body).toMatchObject(expected_result.body)
 
-            globalVariables.__ID_TS_OUT__ = idTs
-            console.log("response id dari test suite", globalVariables.__ID_TS_OUT__)
+            globalVariables.__ID_TS_ADDITIONAL__ = idTs
+            console.log("Response id from test suite additional: ", globalVariables.__ID_TS_ADDITIONAL__)
+
+            await sleep(2000)
         }
     )
 })

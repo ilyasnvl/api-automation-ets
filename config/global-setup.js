@@ -1,5 +1,5 @@
-const { getTimesheet, putTimesheetIn } = require('../collections/mobile/v3/timesheet');
-const test_data = require('../test-data/mobile/v3/timesheet/put-in/P, successfully timesheet in');
+// const { getTimesheet, putTimesheetIn } = require('../collections/mobile/v3/timesheet');
+// const test_data = require('../test-data/mobile/v3/timesheet/put-in/P, successfully timesheet in');
 const globalVariables = require('./global-variables.json')
 const request = require('supertest');
 
@@ -19,17 +19,21 @@ module.exports = async function (globalConfig, projectConfig) {
 
     // create token driver that haven't FOK
     globalVariables.__TOKEN_DA_NO_FOK__ = await createTokenDa({
-        user_id: globalVariables.__VALID_NIP2__,
-        user_secret: globalVariables.__VALID_PASSWORD2__
+        user_id: globalVariables.__NIP_NO_FOK__,
+        user_secret: globalVariables.__PSWD_NIP_NO_FOK__
     });
 
     // create token driver for timesheet in/out
-    globalVariables.__TOKEN_DA_TS__ = await createTokenDa({
-        user_id: globalVariables.__VALID_NIP3__,
-        user_secret: globalVariables.__VALID_PASSWORD3__
+    globalVariables.__TOKEN_DA_PUT_OUT__ = await createTokenDa({
+        user_id: globalVariables.__NIP_PUT_OUT__,
+        user_secret: globalVariables.__PSWD_NIP_PUT_OUT
     });
 
-    //globalVariables.__RANDOM_NIP__ = generateRandomNip();
+    // create token driver for tc put additional
+    globalVariables.__TOKEN_DA_PUT_ADDITIONAL__ = await createTokenDa({
+        user_id: globalVariables.__NIP_PUT_ADDITIONAL__,
+        user_secret: globalVariables.__PWSD_NIP_PUT_ADDITIONAL__
+    });
 
     // create token OP
     globalVariables.__TOKEN_OP__ = await createTokenCustomer({
@@ -55,11 +59,13 @@ module.exports = async function (globalConfig, projectConfig) {
         user_secret: globalVariables.__VALID_PASSWORD_UDED__
     });
     
-    globalVariables.__ID_TS__  = await putTimesheetIn(test_data.header, test_data.body).result.body;
+    // globalVariables.__ID_TS__  = await putTimesheetIn();
+    // console.log("Resp global: ", globalVariables.__ID_TS__)
 
     console.log("token da fok: ", globalVariables.__TOKEN_DA_FOK__);
     console.log("token da no fok: ", globalVariables.__TOKEN_DA_NO_FOK__);
-    console.log("token da for timesheet: ", globalVariables.__TOKEN_DA_TS__)
+    console.log("token da for timesheet: ", globalVariables.__TOKEN_DA_PUT_OUT__)
+    console.log("token da for additional: ", globalVariables.__TOKEN_DA_PUT_ADDITIONAL__)
     console.log("token op: ", globalVariables.__TOKEN_OP__);
     console.log("token sales: ", globalVariables.__TOKEN_SALES__);
     console.log("token pic: ", globalVariables.__TOKEN_PIC__);

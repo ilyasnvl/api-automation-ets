@@ -1,6 +1,7 @@
 const { Pool } = require('pg')
+const globalVariables = require('../../../config/global-variables.json')
 
-async function getTimesheet() {
+async function delTimesheet() {
     const pool = new Pool({
         host: __DATABASE__.__HOST__,
         port: __DATABASE__.__PORT__,
@@ -10,19 +11,21 @@ async function getTimesheet() {
     })
 
     const query = `
-        SELECT id, driver_nip, driver_name
-        FROM master_timesheets
-        WHERE id = $1
-        AND period = '2025-07'
+        DELETE FROM master_timesheets
+        WHERE id in ($1, $2, $3)
         ;
     `
-    const values = [__ID_TS__]
+    const values = [
+        globalVariables.__ID_TS_IN__, 
+        globalVariables.__ID_TS_OUT__,
+        globalVariables.__ID_TS_ADDITIONAL__
+    ]
     console.log(values)
     const result = await pool.query(query, values)
     await pool.end()
-    console.log("query result: ", result)
+    console.log("successfully deleted rows: ", result.rowCount)
 }
 
 module.exports = {
-    getTimesheet
+    delTimesheet
 }

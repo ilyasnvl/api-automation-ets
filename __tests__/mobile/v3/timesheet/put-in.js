@@ -3,7 +3,6 @@ const timesheetInCollection = require('../../../../collections/mobile/v3/timeshe
 const globalVariables = require('../../../../config/global-variables.json')
 const testDataDir = __filename.split('.')[0].replace('__tests__', 'test-data')
 const timesheetHelper = require('../../../../utilities/helper/mobile/timesheet')
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let testData = require('require-all')({
     dirname: testDataDir

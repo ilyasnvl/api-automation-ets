@@ -7,8 +7,8 @@ const test_data = {
         "Content-Type": "application/json",
     },
     "body": {
-        "user_id": "88888887",
-        "user_secret": "8887",
+        "user_id": "88888886",
+        "user_secret": "8886",
         "scope": "openid email profile phone offline_access",
         "response_type": "id_token token code"
     },

@@ -5,7 +5,6 @@ const testDataDir = __filename.split('.')[0].replace('__tests__', 'test-data')
 const timesheetHelper = require('../../../../utilities/helper/mobile/timesheet')
 const tsInTestData = require('../../../../test-data/mobile/v3/timesheet/put-in/P, successfully timesheet in')
 const tsOutTestData = require('../../../../test-data/mobile/v3/timesheet/put-out/P, successfully timesheet out')
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let testData = require('require-all')({
     dirname: testDataDir
@@ -41,8 +40,6 @@ describe("Put Correction Absen", () => {
 
             globalVariables.__ID_TS_ADDITIONAL__ = idTs
             console.log("Response id from test suite additional: ", globalVariables.__ID_TS_ADDITIONAL__)
-
-            await sleep(2000)
         }
     )
 })

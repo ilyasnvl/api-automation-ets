@@ -8,17 +8,24 @@ const test_data = {
     },
     "body": {
         "user_id": __VALID_NIP__,
-        "user_secret": "8181",
+        "user_secret": "8282",
         "scope": "openid email profile phone offline_access",
         "response_type": "id_token token code"
     },
     "expected_result": {
-        "status_code": 500,
+        "status_code": 200,
         "body": {
-            "error": "runtime error: invalid memory address or nil pointer dereference",
-            "code": 13,
-            "message": "runtime error: invalid memory address or nil pointer dereference",
-            "details": []
+            "code": "",
+            "state": "",
+            "scope": "",
+            "access_token": "",
+            "token_type": "",
+            "id_token": "",
+            "expires_in": "0",
+            "refresh_token": "",
+            "error": "invalid_user_or_pass",
+            "error_description": "Invalid username or password",
+            "error_uri": ""
         }
     }
 }

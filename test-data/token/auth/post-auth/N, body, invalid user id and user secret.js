@@ -1,5 +1,9 @@
 const path = require('path');
+const { generateRandomNip, generateRandomPinCode } = require('../../../../utilities/tools');
 const scriptName = path.basename(__filename).split('.')[0];
+
+let nip = generateRandomNip().toString()
+let codePin = generateRandomPinCode().toString()
 
 const test_data = {
     "title": scriptName,
@@ -7,8 +11,8 @@ const test_data = {
         "Content-Type": "application/json",
     },
     "body": {
-        "user_id": "88888886",
-        "user_secret": "8886",
+        "user_id": nip,
+        "user_secret": codePin,
         "scope": "openid email profile phone offline_access",
         "response_type": "id_token token code"
     },

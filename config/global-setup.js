@@ -49,14 +49,14 @@ module.exports = async function (globalConfig, projectConfig) {
 
     // create token PIC
     globalVariables.__TOKEN_PIC__ = await createTokenCustomer({
-        user_id: globalVariables.__VALID_PIC__,
-        user_secret: globalVariables.__VALID_PASSWORD_PIC__
+        user_id: globalVariables.__USER_PIC__,
+        user_secret: globalVariables.__PSWD_PIC__
     });
 
     // create token Uded
     globalVariables.__TOKEN_UDED__  = await createTokenCustomer({
-        user_id: globalVariables.__VALID_UDED__,
-        user_secret: globalVariables.__VALID_PASSWORD_UDED__
+        user_id: globalVariables.__USER_UDED__,
+        user_secret: globalVariables.__PSWD_UDED__
     });
     
     // globalVariables.__ID_TS__  = await putTimesheetIn();

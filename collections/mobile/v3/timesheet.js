@@ -43,7 +43,7 @@ async function putTimesheetIn(header, body) {
 
 async function putTimesheetOut(header, idTs, body) {
     console.log("id dari ts in: ", idTs)
-    console.log("req body asben out: ", body)
+    console.log("req body absen out: ", body)
 
     const caller = new restApiCaller({
         url: __BASE_URL__,

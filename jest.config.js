@@ -2,7 +2,6 @@
 
 const config = {
     testEnvironment: 'node',
-    testSequencer: './config/custom-sequencer.js',
     testTimeout: 30000,
     verbose: true,
     coveragePathIgnorePatterns: [
@@ -17,7 +16,8 @@ const config = {
     ],
     globals: require('./config/global-variables.json'),
     globalSetup: './config/global-setup.js',
-    globalTeardown: './config/global-teardown.js'
+    globalTeardown: './config/global-teardown.js',
+    testSequencer: './config/custom-sequencer.js',
 };
 
 module.exports = config;

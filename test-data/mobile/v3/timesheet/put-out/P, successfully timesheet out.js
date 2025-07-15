@@ -8,7 +8,7 @@ let endOfWork = generateDateTime(0, 7)
 const test_data = {
     "title": scriptName,
     "header": {
-        "Authorization": `Bearer ${__TOKEN_DA_PUT_OUT__}`,
+        "Authorization": `Bearer ${__TOKEN_DA_FOK__}`,
         "X-Request-Id": "mobile"
     },
     "body": {

@@ -2,7 +2,7 @@ const path = require('path')
 const { generateDateTime } = require('../../../../../utilities/tools')
 
 const scriptName = path.basename(__filename).split('.')[0]
-const dateOfService = generateDateTime(0, 7).slice(0, 10)
+const permissionDate = generateDateTime(24, 7).slice(0, 10)
 
 const test_data = {
     "title": scriptName,
@@ -13,8 +13,8 @@ const test_data = {
     "body": {
         "driver_nip": __VALID_NIP__,
         "permission_type_id": 21,
-        "permission_date_start": dateOfService,
-        "permission_date_end": dateOfService,
+        "permission_date_start": permissionDate,
+        "permission_date_end": permissionDate,
         "request_note": "test",
         "driver_notes": {
             "parking_location": "test",

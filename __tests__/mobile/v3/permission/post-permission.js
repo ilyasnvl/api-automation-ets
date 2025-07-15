@@ -9,10 +9,10 @@ let testData = require('require-all')({
 
 let res
 
-afterAll(async () => {
-    res = await permissionHelper.delPermission()
-    return res
-})
+// afterAll(async () => {
+//     res = await permissionHelper.delPermission()
+//     return res
+// })
 
 describe("Post Permission Driver", () => {
     test.each(Object.values(testData))(

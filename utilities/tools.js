@@ -140,9 +140,17 @@ function createScenarioName(fileName) {
     return scriptName.replaceAll('-', ' ').replaceAll('_', ' - ').toUpperCase();
 }
 
+function generateRandomNip() {
+  return Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000;
+}
+
+function generateRandomPinCode() {
+  return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+}
+
 module.exports = {
     generateRandomIntegersInLength, generateRandomStringInLength, generateRandomIntegersInRange,
     generateDateTime, generateDateTimeWithinTimeframe, generateDateTimeOutsideTimeframe, isNowWithinTimeframe,
-    generateUuid, formatDateStringToUtc, createScenarioName
+    generateUuid, formatDateStringToUtc, createScenarioName, generateRandomNip, generateRandomPinCode
 }
 

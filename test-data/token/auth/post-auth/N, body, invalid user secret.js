@@ -1,5 +1,8 @@
 const path = require('path');
+const { generateRandomPinCode } = require('../../../../utilities/tools');
 const scriptName = path.basename(__filename).split('.')[0];
+
+let pinCode = generateRandomPinCode.toString()
 
 const test_data = {
     "title": scriptName,
@@ -8,7 +11,7 @@ const test_data = {
     },
     "body": {
         "user_id": __VALID_NIP__,
-        "user_secret": "8282",
+        "user_secret": pinCode,
         "scope": "openid email profile phone offline_access",
         "response_type": "id_token token code"
     },

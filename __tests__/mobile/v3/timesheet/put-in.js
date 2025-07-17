@@ -44,9 +44,6 @@ describe("Put Timesheet In Driver", () => {
             globalVariables.__ID_TS__ = res.body.result.id
             console.log("id dari tc in: ",globalVariables.__ID_TS__)
 
-            globalVariables.__item__ = 1
-            console.log("id dari tc item: ",globalVariables.__item__)
-
             const id = res.body.result.id;
             updateGlobalVariable({ __ID_TS__: id });
             console.log('ID ditambahkan ke globalVariable.json:', id);

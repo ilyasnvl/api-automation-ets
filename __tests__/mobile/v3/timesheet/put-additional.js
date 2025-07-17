@@ -17,12 +17,12 @@ let res
 let idTs
 
 beforeAll(async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay 
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // Delay 
     
         const data = JSON.parse(fs.readFileSync(globalVariables, 'utf-8'));
         idTs = data.__ID_TS__
     // const header = {
-    //     "Authorization": `Bearer ${__TOKEN_DA_PUT_ADDITIONAL__}`,
+    //     "Authorization": `Bearer ${__TOKEN_DA_PERMISSION__}`,
     //     "X-Request-Id": "mobile"
     // },
     // res = await timsheetCollection.putTimesheetIn(header, tsInTestData.body)

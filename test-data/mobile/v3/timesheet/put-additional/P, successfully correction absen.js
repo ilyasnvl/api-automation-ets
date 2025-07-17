@@ -9,7 +9,7 @@ let endOfWork = generateDateTime(23 - new Date().getHours(), 7) //set date today
 const test_data = {
     "title": scriptName,
     "header": {
-        "Authorization": `Bearer ${__TOKEN_DA_FOK__}`,
+        "Authorization": `Bearer ${__TOKEN_DA_PERMISSION__}`,
         "X-Request-Id": "mobile"
     },
     "body": {

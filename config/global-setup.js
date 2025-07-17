@@ -30,7 +30,7 @@ module.exports = async function (globalConfig, projectConfig) {
     });
 
     // create token driver for tc put additional
-    globalVariables.__TOKEN_DA_PUT_ADDITIONAL__ = await createTokenDa({
+    globalVariables.__TOKEN_DA_PERMISSION__ = await createTokenDa({
         user_id: globalVariables.__NIP_PUT_ADDITIONAL__,
         user_secret: globalVariables.__PWSD_NIP_PUT_ADDITIONAL__
     });
@@ -65,7 +65,7 @@ module.exports = async function (globalConfig, projectConfig) {
     console.log("token da fok: ", globalVariables.__TOKEN_DA_FOK__);
     console.log("token da no fok: ", globalVariables.__TOKEN_DA_NO_FOK__);
     console.log("token da for timesheet: ", globalVariables.__TOKEN_DA_PUT_OUT__)
-    console.log("token da for additional: ", globalVariables.__TOKEN_DA_PUT_ADDITIONAL__)
+    console.log("token da for additional: ", globalVariables.__TOKEN_DA_PERMISSION__)
     console.log("token op: ", globalVariables.__TOKEN_OP__);
     console.log("token sales: ", globalVariables.__TOKEN_SALES__);
     console.log("token pic: ", globalVariables.__TOKEN_PIC__);

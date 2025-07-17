@@ -28,7 +28,23 @@ async function postApprovalTsByNip(header, body) {
     return res
 }
 
+async function postApprovalTsById(header, body) {
+    console.log("Req body approve by id: ", body)
+
+    const caller = new restApiCaller({
+        url: __BASE_URL__,
+        endPoint: '/timesheet/v2/master-timesheet/approval',
+        header: header,
+        body: body
+    })
+
+    const res = await caller.post()
+    console.log("Response approve by Id: ", res.body)
+    return res
+}
+
 module.exports = {
     getMasterTimsheet,
-    postApprovalTsByNip
+    postApprovalTsByNip,
+    postApprovalTsById
 }

@@ -1,4 +1,4 @@
-const masterTsCollection = require('../../../../collections/client/timesheet/master-timesheet')
+const masterTsCollection = require('../../../../collections/web/timesheet/master-timesheet')
 
 const testDataDir =  __filename.split('.')[0].replace('__tests__', 'test-data')
 

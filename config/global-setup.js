@@ -11,7 +11,7 @@ module.exports = async function (globalConfig, projectConfig) {
     console.log(projectConfig.cache);
     console.log("Running global setup...");
 
-    // create token driver have FOK
+    // create token driver have FOK/IN
     globalVariables.__TOKEN_DA_FOK__ = await createTokenDa({
         user_id: globalVariables.__VALID_NIP__,
         user_secret: globalVariables.__VALID_PASSWORD__
@@ -23,16 +23,22 @@ module.exports = async function (globalConfig, projectConfig) {
         user_secret: globalVariables.__PSWD_NIP_NO_FOK__
     });
 
-    // create token driver for timesheet in/out
+    // create token driver for timesheet out
     globalVariables.__TOKEN_DA_PUT_OUT__ = await createTokenDa({
         user_id: globalVariables.__NIP_PUT_OUT__,
         user_secret: globalVariables.__PSWD_NIP_PUT_OUT
     });
 
     // create token driver for tc put additional
-    globalVariables.__TOKEN_DA_PERMISSION__ = await createTokenDa({
+    globalVariables.__TOKEN_DA_PUT_ADDITIONAL__ = await createTokenDa({
         user_id: globalVariables.__NIP_PUT_ADDITIONAL__,
         user_secret: globalVariables.__PWSD_NIP_PUT_ADDITIONAL__
+    });
+
+    // create token driver for tc permission
+    globalVariables.__TOKEN_DA_PERMISSION__ = await createTokenDa({
+        user_id: globalVariables.__NIP_PERMISSION__,
+        user_secret: globalVariables.__PWSD_NIP_PERMISSION__
     });
 
     // create token OP
@@ -62,14 +68,14 @@ module.exports = async function (globalConfig, projectConfig) {
     // globalVariables.__ID_TS__  = await putTimesheetIn();
     // console.log("Resp global: ", globalVariables.__ID_TS__)
 
-    console.log("token da fok: ", globalVariables.__TOKEN_DA_FOK__);
-    console.log("token da no fok: ", globalVariables.__TOKEN_DA_NO_FOK__);
-    console.log("token da for timesheet: ", globalVariables.__TOKEN_DA_PUT_OUT__)
-    console.log("token da for additional: ", globalVariables.__TOKEN_DA_PERMISSION__)
-    console.log("token op: ", globalVariables.__TOKEN_OP__);
-    console.log("token sales: ", globalVariables.__TOKEN_SALES__);
-    console.log("token pic: ", globalVariables.__TOKEN_PIC__);
-    console.log("token uded: ", globalVariables.__TOKEN_UDED__);    
+    // console.log("token da fok: ", globalVariables.__TOKEN_DA_FOK__);
+    // console.log("token da no fok: ", globalVariables.__TOKEN_DA_NO_FOK__);
+    // console.log("token da for timesheet: ", globalVariables.__TOKEN_DA_PUT_OUT__)
+    // console.log("token da for additional: ", globalVariables.__TOKEN_DA_PUT_ADDITIONAL__)
+    // console.log("token op: ", globalVariables.__TOKEN_OP__);
+    // console.log("token sales: ", globalVariables.__TOKEN_SALES__);
+    // console.log("token pic: ", globalVariables.__TOKEN_PIC__);
+    // console.log("token uded: ", globalVariables.__TOKEN_UDED__);    
 }
 
 // function generateRandomNip() {

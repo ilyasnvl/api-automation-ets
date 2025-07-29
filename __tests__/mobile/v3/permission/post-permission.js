@@ -9,10 +9,10 @@ let testData = require('require-all')({
 
 let res
 
-// afterAll(async () => {
-//     res = await permissionHelper.delPermission()
-//     return res
-// })
+afterAll(async () => {
+    res = await permissionHelper.delPermission()
+    return res
+})
 
 describe("Post Permission Driver", () => {
     test.each(Object.values(testData))(
@@ -21,7 +21,7 @@ describe("Post Permission Driver", () => {
             expect(res.statusCode).toEqual(expected_result.status_code)
             expect(res.body).toMatchObject(expected_result.body)
 
-            globalVariables.__ID_PERMISSION__ = res.body.result.id
+            globalVariables.__ID_PERMISSION__ = res.body.result.id[0]
             console.log("ID Permission: ", globalVariables.__ID_PERMISSION__)
         }
     )

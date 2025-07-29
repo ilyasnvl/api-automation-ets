@@ -1,23 +1,23 @@
 const path = require('path')
 const { generateDateTime } = require('../../../../../utilities/tools')
-const globalVariables = require('../../../../../config/global-variables.json')
+const scriptName = path.basename(__filename).split('.')[0]
 const schema = require('../../../../../schema/client/timesheet/master-timesheet/get-master-timesheet.json')
 
-const scriptName = path.basename(__filename).split('.')[0]
-
 let period = generateDateTime(0, 7).slice(0, 7)
-let startOfWork = generateDateTime(0, 7)
-let endOfWork = generateDateTime(0, 7)
-let dateOfService = startOfWork.slice(0, 10)
 
 const test_data = {
     "title": scriptName,
     "header": {
         "X-request-id": "web-v2",
-        "Authorization": `Bearer ${__TOKEN_OP__}`
+        "Authorization": `Bearer ${__TOKEN_PIC__},`
     },
     "body": {
-        "ids": []
+        "data": [
+            {
+                "nip": __VALID_NIP__
+            }
+        ],
+        "period": period
     },
     "expected_result": {
         "status_code": 200,
@@ -30,7 +30,7 @@ const test_data = {
         "json_schema": {}
     },
     "param_master_ts": {
-        "driver_nip": __NIP_PUT_OUT__,
+        "driver_nip": __VALID_NIP__,
         "period": period,
     },
     "expected_master_ts": {
@@ -38,8 +38,8 @@ const test_data = {
         "body": {
             "result": {
                 "data": [{
-                    "status": 25,
-                    "approval_operator_by": 76
+                    "status": 23,
+                    "approval_pic_by": 11108
                 }]
             }
         },

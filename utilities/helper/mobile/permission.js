@@ -12,10 +12,14 @@ async function delPermission() {
 
     const query = `
         DELETE FROM permissions
-        WHERE id = $1
+        WHERE id in ($1, $2, $3)
         ;
     `
-    const values = globalVariables.__ID_PERMISSION__
+    const values = [
+        globalVariables.__ID_PERMISSION__,
+        globalVariables.__ID_PERMISSION_APPROVAL__,
+        globalVariables.__ID_PERMISSION2__
+    ]
     console.log(values)
     const result = await pool.query(query, values)
     await pool.end()

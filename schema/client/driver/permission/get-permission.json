@@ -1,0 +1,212 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "type": "object",
+          "properties": {
+            "page": {
+              "type": "integer"
+            },
+            "show": {
+              "type": "integer"
+            },
+            "total_data": {
+              "type": "integer"
+            },
+            "total_page": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "page",
+            "show",
+            "total_data",
+            "total_page"
+          ]
+        },
+        "data": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "driver_nip": {
+                  "type": "string"
+                },
+                "driver_type_id": {
+                  "type": "integer"
+                },
+                "driver_name": {
+                  "type": "string"
+                },
+                "contract_number": {
+                  "type": "string"
+                },
+                "item_number": {
+                  "type": "string"
+                },
+                "detail_number": {
+                  "type": "string"
+                },
+                "customer_number": {
+                  "type": "string"
+                },
+                "customer_name": {
+                  "type": "string"
+                },
+                "pic_id": {
+                  "type": "integer"
+                },
+                "pic_name": {
+                  "type": "string"
+                },
+                "pic_email": {
+                  "type": "string"
+                },
+                "dedicated_uid": {
+                  "type": "integer"
+                },
+                "dedicated_uname": {
+                  "type": "string"
+                },
+                "dedicated_uemail": {
+                  "type": "string"
+                },
+                "permission_date": {
+                  "type": "string"
+                },
+                "permission_day": {
+                  "type": "integer"
+                },
+                "permission_type_id": {
+                  "type": "integer"
+                },
+                "permission_notes": {
+                  "type": "string"
+                },
+                "reject_notes": {
+                  "type": "string"
+                },
+                "replacement_driver_nip": {
+                  "type": "string"
+                },
+                "replacement_driver_name": {
+                  "type": "string"
+                },
+                "replacement_driver_phone": {
+                  "type": "string"
+                },
+                "plate_number": {
+                  "type": "string"
+                },
+                "sio_ppk": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "integer"
+                },
+                "pool_code": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "integer"
+                },
+                "updated_by": {
+                  "type": "integer"
+                },
+                "permission_note": {
+                  "type": "object",
+                  "properties": {
+                    "user_pic_name": {
+                      "type": "string"
+                    },
+                    "user_pic_phone_number": {
+                      "type": "string"
+                    },
+                    "parking_location": {
+                      "type": "string"
+                    },
+                    "car_key_and_stnk": {
+                      "type": "string"
+                    },
+                    "entry_time": {
+                      "type": "string"
+                    },
+                    "purpose": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user_pic_name",
+                    "user_pic_phone_number",
+                    "parking_location",
+                    "car_key_and_stnk",
+                    "entry_time",
+                    "purpose"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "driver_nip",
+                "driver_type_id",
+                "driver_name",
+                "contract_number",
+                "item_number",
+                "detail_number",
+                "customer_number",
+                "customer_name",
+                "pic_id",
+                "pic_name",
+                "pic_email",
+                "dedicated_uid",
+                "dedicated_uname",
+                "dedicated_uemail",
+                "permission_date",
+                "permission_day",
+                "permission_type_id",
+                "permission_notes",
+                "reject_notes",
+                "replacement_driver_nip",
+                "replacement_driver_name",
+                "replacement_driver_phone",
+                "plate_number",
+                "sio_ppk",
+                "status",
+                "pool_code",
+                "created_at",
+                "updated_at",
+                "created_by",
+                "updated_by",
+                "permission_note"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "meta",
+        "data"
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "result"
+  ]
+}

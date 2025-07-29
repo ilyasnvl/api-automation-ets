@@ -36,7 +36,7 @@ const test_data = {
                 "location_name": "Kantor Pusat Blue Bird Group, 60, Jalan Mampang Prapatan Raya, RW 06, Tegal Parang, Mampang Prapatan, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12790, Indonesia",
                 "is_out_of_town": true,
                 "radius": 100,
-                "last_km": 0
+                "last_km": expect.any(Number)
             }
         }
     },

@@ -13,7 +13,7 @@ const test_data = {
     },
     "param": {
         "period": period,
-        "show": 10,
+        "show": 10
     },
     "expected_result": {
         "status_code": 200,

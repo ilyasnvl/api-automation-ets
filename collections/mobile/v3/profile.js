@@ -1,6 +1,7 @@
 const restApiCaller = require('../../../callers/rest-api');
 
 async function getProfil(header, param) {
+    console.log("param profile: ", param)
     const caller = new restApiCaller({
         url: __BASE_URL__,
         endPoint: "/mobile/v3/profile",

@@ -2,28 +2,22 @@ const path = require('path')
 const { generateDateTime } = require('../../../../../utilities/tools')
 
 const scriptName = path.basename(__filename).split('.')[0]
-const permissionDate = generateDateTime(0, 7).slice(0, 10)
+
+let permissionDate = generateDateTime(0, 7).slice(0, 10)
 
 const test_data = {
     "title": scriptName,
     "header": {
-        "Authorization": `Bearer ${__TOKEN_DA_PERMISSION__}`,
-        "X-Request-Id": "mobile"
+        "Authorization": `Bearer ${__TOKEN_OP__}`,
+        "X-Request-Id": "web-v2"
     },
     "body": {
-        "driver_nip": __NIP_PERMISSION__,
-        "permission_type_id": 21,
+        "driver_nip": "00078248",
+        "driver_type_id": 11,
         "permission_date_start": permissionDate,
         "permission_date_end": permissionDate,
-        "request_note": "test",
-        "driver_notes": {
-            "parking_location": "test",
-            "car_key_and_stnk": "test",
-            "user_pic_name": "test",
-            "user_pic_phone_number": "08888888",
-            "entry_time": "09:00",
-            "purpose": "test"
-        }
+        "permission_type_id": 1,
+        "request_note": "teasd"
     },
     "expected_result": {
         "status_code": 200,
@@ -34,7 +28,8 @@ const test_data = {
                     expect.any(Number)
                 ]
             }
-        }
+        },
+        "json_schema": {}
     }
 }
 

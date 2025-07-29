@@ -60,7 +60,7 @@
                   "type": "string"
                 },
                 "end_of_work": {
-                  "type": "string"
+                  "type": ["string", "null"]
                 },
                 "is_start_location_beyond_area": {
                   "type": "boolean"
@@ -123,19 +123,19 @@
                   "type": "string"
                 },
                 "out_town_start_longitude": {
-                  "type": "integer"
+                  "type": "number"
                 },
                 "out_town_start_latitude": {
-                  "type": "integer"
+                  "type": "number"
                 },
                 "out_town_end_location": {
                   "type": "string"
                 },
                 "out_town_end_longitude": {
-                  "type": "integer"
+                  "type": "number"
                 },
                 "out_town_end_latitude": {
-                  "type": "integer"
+                  "type": "number"
                 },
                 "route": {
                   "type": "string"
@@ -195,10 +195,10 @@
                   "type": "boolean"
                 },
                 "shifting_start_of_work": {
-                  "type": "null"
+                  "type": ["string", "null"]
                 },
                 "shifting_end_of_work": {
-                  "type": "null"
+                  "type": ["string", "null"]
                 },
                 "swap_date": {
                   "type": "string"

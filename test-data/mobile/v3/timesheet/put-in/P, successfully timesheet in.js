@@ -2,6 +2,7 @@ const path = require('path')
 
 const scriptName = path.basename(__filename).split('.')[0]
 const { generateDateTime } = require('../../../../../utilities/tools')
+const schema = require('../.././../../../schema/mobile/v3/timesheet/get-timesheet.json')
 
 let startOfWork = generateDateTime(0, 7)
 let dateOfService = startOfWork.slice(0, 10)
@@ -27,7 +28,19 @@ const test_data = {
                 "message": "Processed successfully",
                 "id": expect.any(Number)
             }
-        }
+        },
+        "json_schema": {}
+    },
+    "expected_timesheet_detail": {
+        "status_code": 200,
+        "body": {
+            "result": {
+                "data": [{
+                    "status": 11
+                }]
+            }
+        },
+        "json_schema": schema
     }
 }
 

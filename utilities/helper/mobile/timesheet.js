@@ -12,13 +12,17 @@ async function delTimesheet() {
 
     const query = `
         DELETE FROM master_timesheets
-        WHERE id in ($1, $2, $3)
+        WHERE id in ($1, $2, $3, $4)
+        OR permission_id in ($5, $6)
         ;
     `
     const values = [
         globalVariables.__ID_TS_IN__,
         globalVariables.__ID_TS_OUT__,
-        globalVariables.__ID_TS_ADDITIONAL__
+        globalVariables.__ID_TS_ADDITIONAL__,
+        globalVariables.__ID_TS_APROVAL_ID__,
+        globalVariables.__ID_PERMISSION_APPROVAL__,
+        globalVariables.__ID_PERMISSION2__
     ]
     console.log(values)
     const result = await pool.query(query, values)

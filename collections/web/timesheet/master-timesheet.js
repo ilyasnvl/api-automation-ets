@@ -1,10 +1,10 @@
 const restApiCaller = require('../../../callers/rest-api')
 
-async function getMasterTimsheet(header, param) {
+async function getMasterTimesheet(header, param) {
     console.log("Req param get ts: ", param)
     const caller = new restApiCaller({
         url: __BASE_URL__,
-        endPoint: "/timesheet/v2/master-timesheet",
+        endPoint: '/timesheet/v2/master-timesheet',
         header: header,
         param: param,
     })
@@ -44,7 +44,7 @@ async function postApprovalTsById(header, body) {
 }
 
 module.exports = {
-    getMasterTimsheet,
+    getMasterTimesheet,
     postApprovalTsByNip,
     postApprovalTsById
 }

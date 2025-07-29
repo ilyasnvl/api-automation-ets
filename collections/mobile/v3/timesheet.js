@@ -27,7 +27,7 @@ async function putValidate(header, body) {
 }
 
 async function putTimesheetIn(header, body) {
-    console.log("req body absen in: ", body)
+    console.log("req body absen in: ", header, body)
     
     const caller = new restApiCaller({
         url: __BASE_URL__,

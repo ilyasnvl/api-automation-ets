@@ -234,10 +234,10 @@
                   "type": "string"
                 },
                 "prev_start_of_work": {
-                  "type": "null"
+                  "type": ["null", "string"]
                 },
                 "prev_end_of_work": {
-                  "type": "null"
+                  "type": ["null", "string"]
                 },
                 "reason_by_pic": {
                   "type": "string"

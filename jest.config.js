@@ -12,7 +12,8 @@ const config = {
         "jest-html-reporters"
     ],
     setupFilesAfterEnv: [
-        "jest-expect-message"
+        "jest-expect-message",
+        './jest.setup.js'
     ],
     globals: require('./config/global-variables.json'),
     globalSetup: './config/global-setup.js',
